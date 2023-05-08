@@ -57,6 +57,11 @@ body {
     overflow: hidden;
     padding: 0 5px;
 }
+
+.header-search form{
+    width: 90%;
+}
+
 .header-search input{
     outline: none;
     border: none;
@@ -610,7 +615,7 @@ input{
     .header-search{
         justify-content: space-between;
         padding-left: 2%;
-        width: 50%;
+        width: 55%;
     }
 
     .copy-header i{
