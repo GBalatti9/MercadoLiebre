@@ -10,21 +10,17 @@ body {
 }
 
 .main-header{
-    position: fixed;
+    position: sticky;
     box-shadow: 1px 1px 5px gray;
     background-color: #EAC926;
     top: 0;
     z-index: 100;
-    padding: 0 0 20px 0;
+    padding: 10px 10px;
     width: 100%;
 }
 
 .main-header .imagen-banner{
     display: none;
-}
-
-.header-box{
-    margin: 20px 20px 0 20px;
 }
 
 .main-header-first-row{
@@ -35,7 +31,7 @@ body {
 
 .logo{
     width: 50%;
-    animation: aumentar 1s ease-in infinite normal;
+    /* animation: aumentar 1s ease-in infinite normal; */
 }
 
 @keyframes aumentar {
@@ -51,16 +47,17 @@ body {
 }
 
 .header-search{
+    height: 45px;
+    width: 45%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 45%;
     background-color: #ffff;
     border-radius: 12px;
+    overflow: hidden;
+    padding: 0 5px;
 }
 .header-search input{
-    height: 50px;
-    border-radius: 12px;
     outline: none;
     border: none;
     width: 100%;
@@ -69,21 +66,31 @@ body {
 .header-search a{
     color: #111;
     background-color: white;
-    border: 1px solid #ebebeb;
-    height: 100%;
-    font-size: 150%;
+    font-size: 100%;
     outline: none;
-}
-h2 {
-    font-size: 24px;
-    font-weight: bolder;
-    margin: auto;
 }
 
 .copy-header{
-    font-weight: 400;
     text-align: center;
-    margin: 10px;
+    margin: 10px auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-header i{
+    width: 5%;
+}
+
+.info-copy-header{
+    width: 70%;
+}
+
+.info-copy-header h2{
+    font-size: 24px;
+    font-weight: bolder;
+    margin: 0px;
 }
 
 .main-header-navbar {
@@ -135,11 +142,7 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 230px;
-}
-
-.main-subsection{
-    margin: 0px;
+    margin-top: 15px;
 }
 
 .articles{
@@ -155,30 +158,34 @@ section {
     margin: 10px;
     background-color: #ffff;
     width: 100%;
+    transition: all 1s;
 }
 
-.title-mobile:hover{
-    opacity: 1;
+.articles article:hover {
+    box-shadow: 0px 5px 20px gray;
     cursor: pointer;
 }
 
-.title-mobile{
+.articles article:hover i{
+    transform: rotate(-90deg);
+}
+main section article i{
+    display: block;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #39b54a;
+    background-color: #FFF;
+    border-radius: 50%;
     position: absolute;
-    top: 10px;
-    background-color: rgba(0,0,0,0.5);
-    color: #ffff;
-    margin: 0px;
-    padding: 15px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    border-radius: 5px;
+    right: 10%;
+    bottom: 17%;
     transition: all 1s;
+}
+
+.truck{
+    position: relative;
 }
 
 .img-container{
@@ -208,6 +215,7 @@ section {
 .product-info .description {
     color: #666;
     margin-top: 5%;
+    
 }
 
 .product-info .discount {
@@ -226,8 +234,9 @@ footer {
     background-color: #ffff;
     display: flex;
     align-items: center;
-    padding: 2% 2% 0 2%;
+    padding: 2%;
     flex-wrap: wrap;
+    display: none;
 }
 
 footer i{
@@ -356,6 +365,12 @@ input{
     font-weight: lighter;
 }
 
+.input-btn-login:hover{
+    background-color: #0022AA;
+    transition: all 1s;
+    cursor: pointer;
+}
+
 .input-grupo-login{
     width: 100%;
 }
@@ -368,10 +383,18 @@ input{
 
 @media(min-width: 480px) {
     article .product-info{
+        display: inline-block;
+    }
+    nav, .description {
         display: none;
     }
-    nav {
-        display: none;
+
+    .articles article:hover .description{
+        display: block;
+    }
+
+    .header-search{
+        max-width: 210px;
     }
 }
 
@@ -387,14 +410,19 @@ input{
     .main-header-top-bar{
         display: flex;
         justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        margin: auto;
     }
 
     .copy-header{
-        font-weight: 400;
-        margin: 10px;
-        display: inline-block;
+        display: flex;
         width: 35%;
-        text-align: right;
+        margin: 0px;
+    }
+
+    .info-copy-header {
+        font-size: 20px;
     }
 
     .hamburger-button{
@@ -419,22 +447,13 @@ input{
         position: relative;
     }
 
-    main section article i{
-        display: block;
-        font-size: 16px;
-        padding: 5px;
-        width: 30px;
-        height: 30px;
-        border: 1px solid #39b54a;
-        background-color: #FFF;
-        border-radius: 50%;
-        position: absolute;
-        right: 10%;
-        bottom: 17%;
+    .main-header-first-row{
+        width: 66.66%;
     }
     .header-search{
         position: relative;
-        width: 100%;
+        width: 45%;
+        max-width: none;
     }
     .header-search input{
         width: 100%;
@@ -476,6 +495,10 @@ input{
         font-size: 0.9em;
     }
 
+    .info-legal{
+        text-align: left;
+    }
+
     /* ESTILOS REGISTER.HTML */
     .formulario-regis{
         width: 70%;
@@ -511,6 +534,10 @@ input{
     .input-grupo-login input {
         padding: 2%;
     }
+
+    footer{
+        display: flex;
+    }
 } 
 
 @media(min-width: 1200px){
@@ -540,11 +567,15 @@ input{
 
     .articles article {
         width: 23%;
-        transition: all 1s;
     }
 
-    .articles article:hover{
-        box-shadow: 0px 5px 20px gray;
+    .header-search{
+        justify-content: space-between;
+        padding-left: 2%;
+    }
+
+    .copy-header i{
+        padding-left: 10px;
     }
 
     /* ESTILOS REGISTER.HTML */
