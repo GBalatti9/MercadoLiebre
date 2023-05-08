@@ -19,9 +19,9 @@ body {
     width: 100%;
 }
 
-.main-header .imagen-banner{
+/* .main-header .imagen-banner{
     display: none;
-}
+} */
 
 .main-header-first-row{
     display: flex;
@@ -113,11 +113,11 @@ body {
 
 .imagen-banner {
     width: 100%;
-    height: 25vh;
-    background-image: url(/images/img-home-banner.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    overflow: hidden;
+}
+
+.imagen-banner img{
+    width: 100%;
 }
 
 .hamburger-button{
@@ -133,7 +133,7 @@ body {
 }
 
 main {
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
 
@@ -157,7 +157,8 @@ section {
     position: relative;
     margin: 10px;
     background-color: #ffff;
-    width: 100%;
+    width: 80%;
+    border-radius: 5px;
     transition: all 1s;
 }
 
@@ -232,11 +233,14 @@ main section article i{
 
 footer {
     background-color: #ffff;
+    display: none;
+}
+
+.items-footer{
     display: flex;
     align-items: center;
     padding: 2%;
     flex-wrap: wrap;
-    display: none;
 }
 
 footer i{
@@ -245,17 +249,17 @@ footer i{
 
 footer h3{
     font-size: 1rem;
-    padding: 2% 0 1% 0;
+    padding: 2% 0;
 }
 
 .item-footer{
     width: 33%;
     text-align: center;
-    padding: 0 2% 0 0;
+    padding: 1%;
 }
 
 .footer-info{
-    padding: 2% 0 0 0;
+    padding: 0 0 2% 0;
     width: 100%;
     text-align: center;
 }
@@ -348,7 +352,6 @@ input{
     width: 100%;
     background-color: #c7c7c7;
     border-radius: 5px;
-    margin: 20px 0;
     padding: 5%;
     display: flex;
     align-items: center;
@@ -385,16 +388,45 @@ input{
     article .product-info{
         display: inline-block;
     }
-    nav, .description {
+    nav{
         display: none;
+    }
+    
+    .description {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 1s;
+        -webkit-transition-delay: 0.2s;
+    }
+
+    .articles article{
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 310px;
+        width: 300px;
+        transition: all 1s;
     }
 
     .articles article:hover .description{
-        display: block;
+        padding-bottom: 2%;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .articles article:hover{
+        height: 350px;
     }
 
     .header-search{
-        max-width: 210px;
+        justify-content: space-between;
+        padding: 2%;
+    }
+
+    .price-discount{
+        display: flex;
+        width: 60%;
+        justify-content: space-between;
     }
 }
 
@@ -454,6 +486,7 @@ input{
         position: relative;
         width: 45%;
         max-width: none;
+        justify-content: space-between;
     }
     .header-search input{
         width: 100%;
@@ -475,7 +508,8 @@ input{
     }
     
     .articles article {
-        width: 40%;
+        width: 310px;
+        height: 320px;
         border-radius: 5px;
     }
 
@@ -497,6 +531,8 @@ input{
 
     .info-legal{
         text-align: left;
+        font-weight: lighter;
+        padding-left: 2%;
     }
 
     /* ESTILOS REGISTER.HTML */
@@ -537,12 +573,13 @@ input{
 
     footer{
         display: flex;
+        flex-direction: column;
     }
 } 
 
 @media(min-width: 1200px){
     .logo{
-        width: 250px;
+        width: 40%;
     }
 
     .main-header-top-bar, .main-header-navbar {
@@ -566,12 +603,14 @@ input{
     }
 
     .articles article {
-        width: 23%;
+        width: 310px;
+        height: 320px;
     }
 
     .header-search{
         justify-content: space-between;
         padding-left: 2%;
+        width: 50%;
     }
 
     .copy-header i{
