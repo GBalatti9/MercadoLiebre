@@ -226,6 +226,7 @@ main section article i{
 
 .product-info .discount {
     color: #39b54a;
+    padding-left: 2%;
 }
 .discount,
 .description{
@@ -309,6 +310,10 @@ footer h3{
 .input-grupo {
     margin: auto;
     width: 90%;
+}
+
+.formulario-regis .input-grupo input{
+    padding: 0 2%;
 }
 
 .input-grupo label {
@@ -506,6 +511,12 @@ input{
         border: none;
         right: 2.5%;
     }
+
+    .img-container img {
+        width: 90%;
+        display: block;
+        margin: auto;
+    }
     .articles{
         display: flex;
         flex-direction: row;
@@ -515,9 +526,11 @@ input{
     .articles article {
         width: 310px;
         height: 320px;
-        border-radius: 5px;
     }
 
+    .articles article:hover{
+        height: 350px;
+    }
     .price-discount{
         display: flex;
         align-items: center;
@@ -525,7 +538,7 @@ input{
     }
 
     .price{
-        width: 30%;
+        width: 50%;
         font-size: 1em;
     }
 
@@ -607,11 +620,22 @@ input{
         font-size: 20px;
     }
 
+    .img-container img {
+        width: 90%;
+        display: block;
+        margin: auto;
+    }
+    .articles{
+        flex-wrap: nowrap;
+    }
     .articles article {
-        width: 310px;
-        height: 320px;
+        width: 250px;
+        height: 270px;
     }
 
+    .articles article:hover{
+        height: 300px;
+    }
     .header-search{
         justify-content: space-between;
         padding-left: 2%;
